@@ -353,7 +353,7 @@ gsap.to(imageSeq, {
   ease: `none`,
   scrollTrigger: {
     scrub: 0.15,
-    trigger: `#page7`,
+    trigger: `canvas`,
     //   set start end according to preference
     start: `top top`,
     end: `600% top`,
@@ -372,7 +372,7 @@ function scaleImage(img, ctx) {
   var canvas = ctx.canvas;
   var hRatio = canvas.width / img.width;
   var vRatio = canvas.height / img.height;
-  var ratio = Math.max(hRatio, vRatio);
+  var ratio = Math.min(hRatio, vRatio);
   var centerShift_x = (canvas.width - img.width * ratio) / 2;
   var centerShift_y = (canvas.height - img.height * ratio) / 2;
   ctx.clearRect(0, 0, canvas.width, canvas.height);
@@ -381,7 +381,7 @@ function scaleImage(img, ctx) {
     0,
     0,
     img.width,
-    img.height,
+    img.height, 
     centerShift_x,
     centerShift_y,
     img.width * ratio,
@@ -390,7 +390,7 @@ function scaleImage(img, ctx) {
 }
 ScrollTrigger.create({
 
-  trigger: "#page7",
+  trigger: "canvas",
   pin: true,
   // markers:true,
   scroller: `#main`,
