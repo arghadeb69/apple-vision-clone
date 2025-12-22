@@ -334,7 +334,7 @@ function files(index) {
   return data.split("\n")[index];
 }
 
-const frameCount = 300;
+const frameCount = 198;
 
 const images = [];
 const imageSeq = {
@@ -390,7 +390,7 @@ function scaleImage(img, ctx) {
 }
 ScrollTrigger.create({
 
-  trigger: "// object you want to pin it.",
+  trigger: "#page7",
   pin: true,
   // markers:true,
   scroller: `#main`,
